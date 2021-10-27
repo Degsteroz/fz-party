@@ -1,0 +1,22 @@
+.playerCard {
+  display: flex;
+  width: 400px;
+  color: aliceblue;
+  border: 1px darkred solid;
+  border-radius: 2px;
+}
+.title {
+  font-size: 20px;
+  margin: 5px 10px;
+}
+
+.lifeCounterWrapper {
+  display: flex;
+  flex-direction: row;
+  color: darkgray;
+  align-items: center;
+}
+.triangle {
+  margin-right: 5px;
+}
+
