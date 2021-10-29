@@ -1,7 +1,45 @@
+$blueColor: #13cbcb;
+$pinkColor: #ec5c94;
+
+
 body {
   margin: 0;
   padding: 0;
+  font-family: "Andale Mono", serif;
 }
+
+button {
+  background: none;
+  border: 1px $pinkColor solid;
+  color: $pinkColor;
+  font-size: 14px;
+  margin: 0;
+  min-width: 30px;
+}
+.headerContainer__logo {
+  border: none;
+}
+
+.initialPlayersComponent {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 0 auto;
+  align-items: center;
+  font-size: 10px;
+  color: white;
+}
+
+.initialPlayersComponent__input {
+  background: none;
+  border: 2px $blueColor solid;
+  color: $pinkColor;
+  font-size: 40px;
+  text-align: center;
+
+  margin-bottom: 30px;
+}
+
 .main {
   display: flex;
   min-height: 100vh;
@@ -10,11 +48,118 @@ body {
   flex-direction: column;
   padding: 0 20px;
 }
+
 .headerContainer {
   margin: 30px auto;
-  color: aliceblue;
-  font-size: 30px;
-  text-align: center;
   display: flex;
   flex-direction: column;
+}
+
+.playersCount {
+  color: $blueColor;
+  font-size: 30px;
+  text-align: center;
+}
+
+.playersContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  animation: appear .3s;
+
+  @keyframes appear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+
+.player {
+  display: flex;
+  min-width: 300px;
+  color: aliceblue;
+  border: 2px $blueColor solid;
+  border-radius: 2px;
+  margin: 10px 20px 0 0;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.played {
+  border-color: $pinkColor;
+}
+
+.player__number{
+  font-size: 20px;
+}
+
+.player__lifeCount {
+  color: $pinkColor;
+  font-size: 20px;
+}
+
+.player__buttonsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.randomPlayerContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  background-color: black;
+  width: 600px;
+  height: 400px;
+  border: 3px $pinkColor solid;
+  font-size: 60px;
+  color: $blueColor;
+}
+
+.randomPlayerContainer__number {
+ margin: 10px;
+}
+
+.randomPlayerContainer__button {
+  width: 10%;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.firstNumberAnimation {
+  animation: firstNumberAppear .4s forwards;
+
+  @keyframes firstNumberAppear {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
+}
+
+.secondNumberAnimation {
+  animation: secondNumberAppear .8s;
+
+  @keyframes secondNumberAppear {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 100%;
+    }
+  }
 }
