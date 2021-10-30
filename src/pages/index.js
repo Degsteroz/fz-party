@@ -33,7 +33,6 @@ const IndexPage = () => {
                 1,
             )
         }
-        tempPlayers.sort((player1, player2) => player2.life - player1.life)
 
         const filteredPlayers = tempPlayers.filter(player => player.life)
 
@@ -128,6 +127,11 @@ const IndexPage = () => {
 
         function handleCloseButton() {
             setShowWheel(false)
+
+            const tempPlayers = players
+            tempPlayers.sort((player1, player2) => player2.life - player1.life)
+            setPlayers(tempPlayers)
+
             if (!wheelValues.length) {
                 setWheelValues(getAlivePlayersNumbers())
                 players.forEach((player) => player.wasPlayed = false)
